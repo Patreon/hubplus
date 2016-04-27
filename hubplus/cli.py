@@ -209,7 +209,7 @@ def raw_input_editor(default=None, editor=None):
         if default:
             tmpfile.write(default)
             tmpfile.flush()
-        subprocess.check_call([editor or get_editor(), tmpfile.name])
+        subprocess.check_call([editor or get_editor(), tmpfile.name], {'PATH': os.environ.get('PATH')})
         tmpfile.file.close()
         with open(tmpfile.name) as tmpfile2:
             return tmpfile2.read().strip()
