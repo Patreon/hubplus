@@ -1,0 +1,16 @@
+*.pyc
+__pycache__
+
+dist/
+build/
+*.egg-info/
+*.swp
+
+.tox/
+.coverage
+
+venv/
+
+.idea/
+
+.DS_Store
