@@ -237,7 +237,13 @@ def create_pull_request(browse, force, file, message, issue, base, head):
         command.append("-b \"{}\"".format(base))
     if head:
         command.append("-h \"{}\"".format(head))
-    branch_url = syscall(' '.join(command), return_stdout=True)
+
+    try:
+        branch_url = syscall(' '.join(command), return_stdout=True)
+    except subprocess.CalledProcessError as err:
+        sys.stderr.write('Error running command: "{}"\n'.format(err.cmd))
+        sys.exit(2)
+
     return branch_url.strip().split('/')[-1]
 
 
