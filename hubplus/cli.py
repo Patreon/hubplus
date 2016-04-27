@@ -210,7 +210,7 @@ def raw_input_editor(default=None, editor=None):
             tmpfile.write(default)
             tmpfile.flush()
         subprocess.check_call([editor or get_editor(), tmpfile.name],
-                              env={'PATH': os.environ.get('PATH')})
+                              env=os.environ)
         tmpfile.file.close()
         with open(tmpfile.name) as tmpfile2:
             return tmpfile2.read().strip()
