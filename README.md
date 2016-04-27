@@ -11,7 +11,7 @@ A command line tool to manage our pull request flow.
 
 3. Install `hubplus`:
 
-    $ pipsi install .
+        $ pipsi install .
 
 
 # Usage
