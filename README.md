@@ -21,6 +21,10 @@ A command line tool to manage our pull request flow.
 
 # Usage
 
-To use it:
+To assign [21echoes](https://github.com/21echoes/) to a PR opened by your current branch:
+
+    $ hubplus -a 21echoes
+    
+To learn more:
 
     $ hubplus --help
